@@ -34,11 +34,10 @@ app.get(NUTRITION_API_REQUEST_MAPPING_TYPES, async (req, res) => {
     }
 });
 
-app.get(NUTRITION_API_REQUEST_MAPPING_RECIPES, async (req, res) => {
-    const searchWord = req.params.ingredient;
-    if (searchWord) {
+app.post(NUTRITION_API_REQUEST_MAPPING_RECIPES, async (req, res) => {
+    if (req.body) {
         try {
-            const recipesFromApi = await getRecipesByKeyWord(searchWord);
+            const recipesFromApi = await getRecipesByKeyWord(req.body);
             res.status(200).json(recipesFromApi);
         } catch (error) {
             res.status(400).json(API_ERROR_MESSAGE_BAD_REQUEST)

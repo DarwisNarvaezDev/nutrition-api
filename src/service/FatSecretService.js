@@ -52,10 +52,12 @@ export async function getRecipeTypes() {
 
 }
 
-export async function getRecipesByKeyWord(word) {
-
+export async function getRecipesByKeyWord(requestBody) {
     try {
-        const searchWord = word;
+
+        const foodType = requestBody.type !== null || !requestBody.type ? requestBody.type : '';
+        const searchWord = requestBody.searchWord;
+
         const url = `${NUTRITION_API_RECIPES_SEARCH_URL_BASE}&search_expression=${searchWord}`;
         const { access_token } = await authenticate();
 

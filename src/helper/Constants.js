@@ -1,6 +1,6 @@
 // API Mappings
 export const NUTRITION_API_REQUEST_MAPPING_TYPES = '/type';
-export const NUTRITION_API_REQUEST_MAPPING_RECIPES = '/recipe/:ingredient';
+export const NUTRITION_API_REQUEST_MAPPING_RECIPES = '/recipe';
 
 // URL Mappings
 export const NUTRITION_API_TYPES_URL = 'https://platform.fatsecret.com/rest/server.api?method=recipe_types.get&format=json';
