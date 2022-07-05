@@ -34,7 +34,7 @@ app.get(NUTRITION_API_REQUEST_MAPPING_TYPES, async (req, res) => {
     }
 });
 
-app.post(NUTRITION_API_REQUEST_MAPPING_RECIPES, async (req, res) => {
+app.get(NUTRITION_API_REQUEST_MAPPING_RECIPES, async (req, res) => {
     const searchWord = req.params.ingredient;
     if (searchWord) {
         try {
